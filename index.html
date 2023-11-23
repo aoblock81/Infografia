@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/globals.css" />
+    <link href="css/foundation.css" rel="stylesheet" type="text/css" />
+    <link href="css/twentytwenty.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/animate.css" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+   
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800">
+
+
+ 
+    <title>Infografía Interactiva</title>
+</head>
+
+<body>
+
+    
+
+
+    <div class="parallax">
+        <div class="parallax-bg">
+            <div class="layer" id="layer1" data-depth="0.00">
+                <img src="img/bg00.png" alt="Imagen 1">
+            </div>
+            <div class="layer" id="layer2" data-depth="0.001">
+                <img src="img/bg01.png" alt="Imagen 1">
+            </div>
+            <div class="layer" id="layer3" data-depth="0.002">
+                <img src="img/bg02.png" alt="Imagen 3">
+            </div>
+            <div id="cursor"></div>
+        </div>
+        <div class="content-over-parallax">
+
+            <!-- Tus otros elementos div pueden ir aquí -->
+            <div>
+
+
+                <div class="contenedor_menu">   
+                   
+                    <!-- Fondos SVG -->
+                    
+                    <h2 class="text-container bold">
+                        Imágenes<br>
+                        que Desafían<br>
+                        la <span class="degrade"> Realidad</span>
+                    </h2>
+                  
+                    <img class="svg-background"src="img/circle.svg" alt="Mi SVG feliz" class="circle" >
+                    <img class="svg-background2"src="img/circle.svg" alt="Mi SVG feliz" class="circle" >
+                  
+                </div>
+    
+
+ 
+                <button class="custom-button custom-button0" style="margin-top: -210px; margin-left: 153px;" >
+                    <img src="img/01.svg" alt="Icono SVG"/>
+                    <div class="title-container">
+                        <a class="" href="01_01.html"><div class="title degrade anima ">Creando imágenes a partir de texto</div></a>
+                        <div class="secondary-text animate__animated animate__fadeInDown">Transforma tus ideas en arte visual con solo palabras.</div>
+                    </div> 
+                </button>
+                <button class="custom-button" style="margin-top: -20px; margin-left: 243px; " > 
+                    <img src="img/01.svg" alt="Icono SVG"/>
+                    <div class="title-container">
+                        <a href="02_01.html"><div class="title degrade anima ">kit de herramientas IA</div></a>
+                        <div class="secondary-text animate__animated animate__fadeInDown">Descubre herramientas avanzadas </br>para personalizar tus creaciones</div>
+                    </div> 
+                </button> 
+                <button class="custom-button" style="margin-top: 170px;  margin-left: 153px;" >
+                    <img src="img/01.svg" alt="Icono SVG"/>
+                    <div class="title-container">
+                        <a href="03_01.html"><div class="title degrade anima">Develando imágenes</div></a>
+                        <div class="secondary-text animate__animated animate__fadeInDown">Aprende por qué las representaciones digitales no son </br>neutrales y cómo los sesgos afectan nuestras percepciones.</div>
+                    </div> 
+                </button>
+                <button class="custom-button custom-button-right"  style="margin-top: -20px; margin-left: -743px ;" >  
+                    <div class="title-container">
+                        <a href="04_01.html"><div class="title degrade anima2">Explora la IA desde tu Hogar</div></a>
+                        <div class="secondary-text-right secondary-text animate__animated animate__fadeInDown">Sumérgete en el mundo de la inteligencia artificial</br>desde la comodidad de tu hogar</div>
+                    </div> 
+                    <img src="img/01.svg" alt="Icono SVG"/>
+                </button>
+ 
+
+            </div> 
+        </div>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="js/script.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+      <script src="js/jquery.event.move.js"></script>
+      <script src="js/jquery.twentytwenty.js"></script>
+      <script>
+      $(function(){
+        $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({default_offset_pct: 0.7});
+        $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({default_offset_pct: 0.3, orientation: 'vertical'});
+      });
+      </script>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/globals.css" />
+
+    <link href="css/foundation.css" rel="stylesheet" type="text/css" />
+    <link href="css/twentytwenty.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/animate.css" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+   
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800">
+
+
+ 
+    <title>Infografía Interactiva</title>
+</head>
+
+<body>
+
+    <div id="cursor"></div>
+
+
+    <div class="parallax">
+        <div class="parallax-bg">
+            <div class="layer" id="layer1" data-depth="0.00">
+                <img src="img/bg00.png" alt="Imagen 1">
+            </div>
+            <div class="layer" id="layer2" data-depth="0.001">
+                <img src="img/bg01.png" alt="Imagen 1">
+            </div>
+            <div class="layer" id="layer3" data-depth="0.002">
+                <img src="img/bg02.png" alt="Imagen 3">
+            </div>
+        </div>
+        <div class="content-over-parallax">
+
+            <!-- Tus otros elementos div pueden ir aquí -->
+            <div class="overlay-content">
+
+
+<div class="contendeor ">
+                <h1 class="animate__animated animate__fadeInDown">Explora y observa</h1>
+                <h2 class="animate__animated animate__fadeInDown animate__delay-1s">¡como el generador de arte con IA da vida a sus ideas!</h2>
+
+                
+
+
+
+ </div>
+
+
+<div class="image-container-slide">
+    <img src="img/generadas/mejora_1.png" alt="Imagen 1">
+</div>
+<div class="slider-container">
+    <input type="range" id="slider" class="slider" min="0" max="30" step="1" value="0" oninput="changeImage(this.value)">
+</div>
+
+
+ <div class="gallery-container">
+    <div class="gallery">
+        <img class="image" src="img/generadas/david_0_1.png" alt="Imagen 1" onclick="expandImage(this)">
+        <img class="image" src="img/generadas/david_0_2.png" alt="Imagen 2" onclick="expandImage(this)">
+        <img class="image center" src="img/generadas/david_0_3.png" alt="Imagen 3" onclick="expandImage(this)">
+        <img class="image" src="img/generadas/david_0_4.png" alt="Imagen 4" onclick="expandImage(this)">
+        <img class="image" src="img/generadas/david_0_5.png" alt="Imagen 5" onclick="expandImage(this)">
+    </div>
+    </div>
+    
+
+
+
+
+
+ 
+
+            </div> 
+        </div>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="js/script.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+      <script src="js/jquery.event.move.js"></script>
+      <script src="js/jquery.twentytwenty.js"></script>
+      <script>
+      $(function(){
+        $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({default_offset_pct: 0.7});
+        $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({default_offset_pct: 0.3, orientation: 'vertical'});
+      });
+      </script>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/globals.css" />
+  <link href="css/foundation.css" rel="stylesheet" type="text/css" />
+  <link href="css/twentytwenty.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="css/animate.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800">
+
+  <title>Infografía Interactiva</title>
+</head>
+
+<body>
+
+  <img class="svg-background3" src="img/circle.svg" alt="Mi SVG feliz" class="circle">
+  <div class="contenedor_menu2">
+   <a href="index.html"><h3 class="text-container2 bold anima">
+      Imágenes<br>
+      que Desafían<br>
+      la <span class="degrade"> Realidad</span>
+    </h3>
+  </a>
+    <!-- ... Opciones Nuecleo 01... -->
+    <div class="custom-button2-container">
+
+      <button class="custom-button2" style="margin-top:10px; margin-left: 180px;">
+        <div class="title-container">
+
+          <div class="title degrade muestra">Creando imágenes a partir de texto</div>
+        </div>
+      </button>
+
+      <button class="custom-button2" style="margin-top: 10px; margin-left: 554px  ;">
+        <img src="img/01.svg" alt="Icono SVG" />
+        <div class="title-container">
+
+          <a class="" href="01_02.html">
+            <div class="title degrade anima">¿Cómo mejorar mis prompt?</div>
+          </a>
+        </div>
+      </button>
+
+      <button class="custom-button2 custom-button__2" style="margin-top: 45px; margin-left: 552px;">
+        <img src="img/01.svg" alt="Icono SVG" />
+        <div class="title-container">
+          <a class="" href="01_03.html">
+            <div class="title degrade anima visible">El estilo es la clave</div>
+          </a>
+        </div>
+      </button>
+
+      <button class="custom-button2 custom-button_2" style="margin-top: -25px   ; margin-left: 552px   ;">
+        <img src="img/01.svg" alt="Icono SVG" />
+        <div class="title-container">
+          <a class="" href="01_01.html">
+            <div class="title degrade anima visible">Explora y Observa</div>
+          </a>
+        </div>
+      </button>
+
+    </div>
+    <!-- ... Opciones ... -->
+  </div>
+
+  <div class="parallax">
+    <div class="parallax-bg">
+      <div class="layer" id="layer1" data-depth="0.00">
+        <img src="img/bg00.png" alt="Imagen 1">
+      </div>
+      <div class="layer" id="layer2" data-depth="0.001">
+        <img src="img/bg01.png" alt="Imagen 1">
+      </div>
+      <div class="layer" id="layer3" data-depth="0.002">
+        <img src="img/bg02.png" alt="Imagen 3">
+      </div>
+      <div id="cursor"></div>
+    </div>
+    <div class="content-over-parallax">
+            <div class="overlay-content">
+
+
+                <div class="contenedor ">
+                    <h1 class="animate__animated animate__fadeInDown">Proporciona detalles</h1>
+                    <h2 class="animate__animated animate__fadeInDown animate__delay-1s">Asegúrate de que tus prompts incluyan tantos detalles como sea posible para obtener resultados más ajustados a tus necesidades.</h2>
+
+                    <div class="inputPrompt"> 
+                      <p class="typing"><span class="typing-text">un hipopótamo en la montaña.</span></p>
+                      <a href="01_02_hipopotamo01.html"><button class="button">Generar</button></a>
+                  </div> 
+
+
+                    <p><span class="bold degrade animate__animated animate__fadeInDown animate__delay-2s">Exploremos la diferencia con un prompt breve</span></p>
+                 
+                </div>
+
+   
+
+
+                <div class="row" style="margin-top: 2em;">
+                    <div class="large-12 columns">
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="js/jquery.event.move.js"></script>
+    <script src="js/jquery.twentytwenty.js"></script>
+    <script>
+        $(function () {
+            $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({ default_offset_pct: 0.7 });
+            $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({ default_offset_pct: 0.3, orientation: 'vertical' });
+        });
+    </script>
+
+</body>
+
+</html>

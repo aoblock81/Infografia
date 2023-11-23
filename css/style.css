@@ -1,0 +1,1205 @@
+@charset "UTF-8";
+
+/* Demo page styling: */
+
+body, h1, ul, li {
+  margin: 0px;
+  padding: 0px;
+  
+}
+
+/* Selectores de etiquetas html*/ 
+body, html {
+margin: 0;
+padding: 0;
+overflow: hidden;
+background: #000;
+color: white;
+font-family: 'Inter', sans-serif;
+font-size: 20px;
+}
+
+body {
+  background:transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+}
+
+
+.box {
+  padding: 2rem;
+  max-width: 14rem;
+  background-color: #f2f2f2;
+}
+
+.box--wide {
+  max-width: 50rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+* + * {
+  margin-top: 2rem;
+}
+
+/* The good stuff: */
+
+:root {
+  /* The intrinsic width of the underline stroke (in pixels). This is 
+   * the same as the height of the cap images. Don't specify the
+   * units! This is because of some of the calculations we do later on. */
+  --underline-intrinsic-width: 8;
+  
+  /* The actual width of the underline stroke we want to render (in pixels).
+   * You can modify this, and the sizing and positioning should be calculated
+   * accordingly. Again, Don't specify the units! */
+  --underline-width: 12;
+  
+  /* The colour used to draw the underline. It should match the colour
+   * used in the cap images... unfortunately we can't modify the SVG
+   * fill via CSS because it's a background image. */
+  --underline-color: #f1a1e3;
+  
+  /* We need to know the width of the cap images so that we
+   * can position everything on the x axis accordingly. */
+  --underline-cap-width: 4px;
+  
+  /* The border is positioned relative to the bottom of the line.
+   * We can move it upwards a little to create an overlap effect. */
+  --underline-offset-y: -2px;
+  
+  /* The padding to add to the x axis. By default, the caps would be
+   * aligned with the beginning and end of the line. */
+  --underline-padding-x: 0.12em;
+  
+  /* The cap images to use that form the left and right rounded
+   * shape. I guess these could be any shape, they don't
+   * necessarily have to be round 🙂.
+   */
+  --cap-image-left: url(https://files-d4s40otz1.now.sh/left.svg);
+  --cap-image-right: url(https://files-4vvqilj8v.now.sh/right.svg);
+}
+  
+.heading {
+  display: inline;
+  --underline-width-scale: calc(var(--underline-width) / var(--underline-intrinsic-width));
+  padding: 0 calc(var(--underline-padding-x) + calc(var(--underline-cap-width) * var(--underline-width-scale)));
+  box-decoration-break: clone;
+  background-repeat: no-repeat;
+  color: #1221ff;
+  background-image:
+    linear-gradient(180deg, var(--underline-color), var(--underline-color)),
+    var(--cap-image-left),
+    var(--cap-image-right);
+  background-position-x:
+    calc(var(--underline-cap-width) * var(--underline-width-scale)),
+    0,
+    100%;
+  background-position-y: calc(100% - var(--underline-offset-y) * -1);
+  background-size:
+    calc(100% - calc(var(--underline-cap-width) * var(--underline-width-scale) * 2)) calc(var(--underline-width) * 1px),
+    auto calc(var(--underline-width) * 1px),
+    auto calc(var(--underline-width) * 1px);
+}
+
+.heading--2 {
+  --underline-width: 8;
+  --underline-offset-y: -2px;
+}
+
+.heading--3 {
+  font-size: 3rem;
+  font-weight: bold;
+  --underline-width: 20;
+  --underline-offset-y: -2px;
+  --cap-image-left: url(https://files-6lc03kjqt.now.sh/left-2.svg);
+  --cap-image-right: url(https://files-e7gkh52mq.now.sh/right-2.svg);
+}
+
+
+
+
+
+
+#cursor {
+  position: fixed;
+  width: 100vw; /* 100% del ancho de la ventana */
+  height: 100vw; /* 100% de la altura de la ventana */
+  background: radial-gradient(circle, rgba(69, 20, 132, 0.2) 0%, rgb(69, 20, 132, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.2s ease-out;
+  margin: 0;
+  padding: 0; 
+}
+
+
+p {
+  color: #FFF;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 100;
+  line-height: normal; 
+  margin-bottom: 0.6rem;
+
+}
+
+ 
+.bold {
+  font-weight: 600;
+}
+.extrabold {
+  font-weight: 800;
+}
+
+a {
+  
+  color: rgb(255, 255, 255);
+}
+a:hover {
+  color: rgb(255, 255, 255);
+}
+.link {
+    text-shadow: 0px 10px 30px #f712ff50;
+    background: linear-gradient(90deg, rgb(132, 0, 255) 30%, rgb(245, 20, 255) 100%);
+    -webkit-background-clip: text !important;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    color: transparent;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease; /* Transición suave para todas las propiedades durante 0.3 segundos */
+
+
+  }
+
+.link:hover {
+    text-shadow: 0px 10px 50px #f712ff69;
+    background: linear-gradient(90deg,  rgb(245, 20, 255) 30%, rgb(132, 0, 255) 100%);
+    -webkit-background-clip: text !important;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    color: transparent;
+    cursor: pointer; /* Cambio del cursor a la mano */
+  }
+ .anima {
+  transform: scale(1); /* Escalado al 110% del tamaño original */
+    transform-origin: left center; /* Establecer el punto de transformación en la izquierda */
+    transition: transform 0.3s; /* Agregar una transición para suavizar el efecto de escala */
+    z-index: 10;
+  }
+  
+ .anima:hover {
+  transform: scale(1.1)  ; /* Escalado al 110% del tamaño original */
+ }
+
+ .anima2 {
+  transform: scale(1); /* Escalado al 110% del tamaño original */
+    transform-origin: right center; /* Establecer el punto de transformación en la izquierda */
+    transition: transform 0.3s; /* Agregar una transición para suavizar el efecto de escala */
+    z-index: 10;
+  }
+  
+ .anima2:hover {
+  transform: scale(1.1)  ; /* Escalado al 110% del tamaño original */
+ }
+
+
+
+h1 {
+  color: #FFF;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  
+
+}
+
+h2 {
+  color: #FFF;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 1rem;
+
+}
+
+.degrade {
+  text-shadow: 0px 10px 30px #f712ff50;
+  background: linear-gradient(90deg, rgb(132, 0, 255) 30%, rgb(245, 20, 255) 100%);
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  color: transparent;
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease; /* Transición suave para todas las propiedades durante 0.3 segundos */
+}
+
+.fuxia {
+  text-shadow: 0px 10px 30px #f712ff50;
+  color:rgb(245, 20, 255);
+
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease; /* Transición suave para todas las propiedades durante 0.3 segundos */
+}
+.violeta {
+  text-shadow: 0px 10px 30px #f712ff50;
+  color:rgb(132, 0, 255);
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease; /* Transición suave para todas las propiedades durante 0.3 segundos */
+}
+
+.contenedor {
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 1000px;
+  margin-bottom: 1.0rem;
+  
+
+}
+.opciones {
+  width: 100%;
+  margin: 0 1.6rem 0 -1rem;
+  margin-bottom: 1.6rem;
+
+
+}
+
+.button {
+  position: relative;
+  margin: 0.3rem;
+  background: linear-gradient(90deg, rgba(132, 0, 255, 0.3) 30%, rgba(245, 20, 255, 0.3) 100%);
+  border: 1px solid;
+  border-color: rgb(132, 0, 255);
+  border-radius: 50px; /* Bordes redondeados */
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Transición suave para todas las propiedades durante 0.3 segundos */
+}
+
+.button:hover {
+  background: linear-gradient(90deg, rgba(132, 0, 255, 0.3) 30%, rgba(245, 20, 255, 0.5) 100%);
+  transform: scale(1.05); /* Escalado al 110% del tamaño original */
+}
+
+/* Estilos específicos para botones sin enlace */
+.button.no-link {
+  opacity: 0.5; /* Opacidad al 50% */
+  cursor: default; /* Cambia el cursor a predeterminado (no apunta) */
+  pointer-events: none; /* Deshabilita eventos del puntero */
+}
+
+/* Estilos específicos para botones sin enlace en hover */
+.button.no-link:hover {
+  background: linear-gradient(90deg, rgba(132, 0, 255, 0.3) 30%, rgba(245, 20, 255, 0.3) 100%);
+  transform: scale(1); /* Sin transformación en el hover */
+}
+.flotante {
+  width: 1000px;
+  display: block;
+  position: absolute;
+  z-index: 10;
+  left: 50%; /* Centra horizontalmente */
+  top: 50%; /* Centra verticalmente */
+  transform: translate(-50%, 140px); /* Ajusta 50px hacia abajo */
+}
+
+
+.inputPrompt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin: 1.3rem -1.3rem;
+  background: #111;
+  border: 1px solid;
+  border-color: rgb(132, 0, 255);
+  border-radius: 50px; /* Bordes redondeados */
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 0rem;  
+  height: 70px;
+  transition: all 0.3s ease; /* Transición suave para todas las propiedades durante 0.3 segundos */
+}
+
+.inputPromptBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  position: relative;
+  margin: 1.3rem -1.3rem;
+  background: #111;
+  border: 1px solid;
+  border-color: rgb(132, 0, 255);
+  border-radius: 30px; /* Bordes redondeados */
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 0rem; 
+  padding-right: 35px;
+  transition: all 0.3s ease; /* Transición suave para todas las propiedades durante 0.3 segundos */
+  height: 165px;
+ 
+}
+
+/* Coloca aquí tus estilos CSS */
+.typing {
+  font-size: 0.8rem;
+  font-weight: 400;
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  display: inline-block; /* Permite que el contenedor se ajuste al contenido */
+  height: 1rem;
+  vertical-align: middle;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+.typingbox {
+  font-size: 0.8rem;
+  font-weight: 400;
+  height: 1rem;
+  vertical-align: middle;
+  margin-left: 30px;
+  margin-top: 25px ;
+}
+.typing-text {
+  font-size: 0.8rem;
+  font-weight: 400;
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  overflow: hidden; /* Oculta el texto que desborda el contenedor */
+  border-right: 2px solid #333; /* Línea simulando el cursor de escritura */
+  max-width: 0; /* Comienza sin ancho (sin texto visible) */
+  display: inline-block; /* Permite que el contenedor se ajuste al contenido */
+  animation: typing 5s  steps(40) forwards;  /* Nombre de la animación, duración y pasos */
+  height: 1rem; 
+  vertical-align: middle;
+}
+
+@keyframes typing {
+  to {
+      max-width: 100%; /* Ancho máximo según el contenido */
+  }
+}
+
+
+.parallax {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  perspective: 1px;
+}
+
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  
+}
+
+.layer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content-over-parallax {
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.overlay-content {
+  text-align: left;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.gallery-container {
+  display: flex;
+  width: 100%;
+  height: 650px;
+
+  
+}
+
+.gallery {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem; /* Espaciado entre las imágenes */
+}
+
+.image {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.image.center {
+  width: 425px;
+  height: 555px;
+  order: 3; /* Establece el orden de la imagen central */
+}
+
+.image:not(.center) {
+  width: 254px;
+  height: 333px;
+  order: 3; /* Establece el orden de las imágenes no centrales */
+}
+
+.image:hover {
+  transform: scale(1.1);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.twentytwenty-container {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  z-index: 0;
+  overflow: hidden;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px ;
+} 
+
+.twentytwenty-handle {
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -30px; 
+  margin-top: -30px;
+  background-color: #09000fcc;
+  border: none;
+  -webkit-border-radius: 1000px;
+  -moz-border-radius: 1000px;
+  border-radius: 1000px;
+  -webkit-box-shadow: 0px 0px 12px rgba(51, 51, 51, 0.5);
+  -moz-box-shadow: 0px 0px 12px rgba(51, 51, 51, 0.5);
+  box-shadow: 0px 0px 12px rgba(51, 51, 51, 0.5);
+  z-index: 40;
+  cursor: pointer;
+}
+
+.twentytwenty-right-arrow {
+  border-left: 6px solid #9800CE;
+  right: 50%;
+  margin-right: -17px;
+}
+
+.twentytwenty-left-arrow {
+  border-right: 6px solid #9800CE;
+  left: 50%;
+  margin-left: -17px;
+}
+
+.twentytwenty-horizontal .twentytwenty-handle:before {
+  bottom: 50%;
+  margin-bottom: 30px;
+  -webkit-box-shadow: 0 3px 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5);
+  -moz-box-shadow: 0 3px 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5);
+  box-shadow: 0 3px 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5);
+}
+.twentytwenty-horizontal .twentytwenty-handle:before, .twentytwenty-horizontal .twentytwenty-handle:after {
+  width: 6px; 
+  height: 9999px;
+  left: 50%;
+  margin-left: -1.5px;
+}
+
+.twentytwenty-horizontal .twentytwenty-handle:before, .twentytwenty-horizontal .twentytwenty-handle:after, .twentytwenty-vertical .twentytwenty-handle:before, .twentytwenty-vertical .twentytwenty-handle:after {
+  content: " ";
+  display: block;
+  background: #09000fcc;
+  position: absolute;
+  z-index: 30;
+  -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.5);
+}
+
+.twentytwenty-before-label {
+  opacity: 0; }
+  .twentytwenty-before-label:before {
+    content: attr("after"); }
+
+.twentytwenty-after-label {
+  opacity: 0; }
+  .twentytwenty-after-label:before {
+    content: attr(data-content); }
+
+    .twentytwenty-before-label:before, .twentytwenty-after-label:before {
+      position: absolute;
+      background:  #09000fcc;
+      line-height: 38px;
+      padding: 0 20px;
+      -webkit-border-radius: 302px;
+      -moz-border-radius: 30px;
+      border-radius: 30px;
+  }
+
+
+
+
+
+
+
+.slider-container {
+    display: flex;
+    align-items: center;
+}
+
+.slider-label {
+    margin-right: 10px;
+}
+
+.slider {
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    background: linear-gradient(90deg, rgb(132, 0, 255) 30%, rgb(245, 20, 255) 100%);
+    height: 6px;
+    border-radius: 5px;
+    outline: none;
+    margin-top: 30px;
+    margin: 30px 2px 30px -2px;
+}
+
+.slider::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    background: linear-gradient(90deg, rgb(132, 0, 255) 30%, rgb(245, 20, 255) 100%);
+    cursor: pointer;
+    border-radius: 50%;
+    border: #000 solid 4px;
+    margin-left: 2px;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.image-image-container-slide {
+    width: auto;
+    max-height: 655px;
+    overflow: hidden;
+}
+
+.image-container-slide img {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.5s ease-in-out; /* Aumenté la duración de la transición */
+} 
+
+
+
+
+
+
+
+.thumbnail-container {
+  display: flex;
+  gap: 10px;
+}
+
+.thumbnail {
+  width: 120px;
+  height: 120px;
+  cursor: grab;
+  border-radius: 12px;
+  transition: transform 0.2s;
+}
+
+.thumbnail:hover {
+  transform: scale(1.1);
+}
+
+.image-container {
+  margin-top: 20px;
+  border: 2px dashed #ddd;
+  padding: 10px;
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+}
+
+#mainImage, #secondaryImage {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+#secondaryImageContainer {
+  max-height: 555px;
+  width: auto;
+}
+
+.drag-over {
+  border-color: #ff0000;
+}
+
+
+        /* Agrega estilos CSS para los cursores */
+        #imageContainer {
+          cursor: default; /* Cursor predeterminado en el contenedor de la imagen principal */
+      }
+
+      #imageContainer.drag-over {
+          cursor: copy; /* Cambia el cursor a 'copy' cuando estás sobre el contenedor de la imagen principal durante el arrastre */
+      }
+
+      #thumbnailContainer.drag-over {
+          cursor: grab; /* Cambia el cursor a 'grab' cuando estás arrastrando las miniaturas */
+      }
+
+
+/* MENU */
+
+.contenedor_menu {
+
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.contenedor_menu2 {
+  position: absolute;
+  top: 120px;
+  left: 100px; 
+  display: block;
+
+}
+.text-container {
+  position: absolute;
+  margin-left: -30px;
+  margin-top: 20px;
+  width: 210px;
+  text-align: left;
+}
+.text-container2 {
+  position: absolute;
+  width: 160px;
+  text-align: left;
+}
+.svg-background  {
+  position:absolute;
+  width: 350px;
+  height: auto;
+  }
+
+.svg-background2  {
+  position:absolute;
+  width: 500px;
+  height: auto;
+  opacity: 0.3;
+   
+}
+.svg-background3  {
+  position:absolute;
+  width: 860px ;
+  height: auto;
+  opacity: 0.3;
+  top:-280px     ; 
+
+left: -200px;
+
+}
+.svg-background3-activo  {
+  position:absolute;
+  width: 860px ;
+  height: auto;
+  opacity: 0.3;
+  top:-320px     ; 
+
+left: -160px;
+
+}
+.svg-background4  {
+  position:absolute;
+  width: 860px ;
+  height: auto;
+  opacity: 0.3;
+  top:-280px     ; 
+
+left: -300px  ; 
+
+}
+.custom-button{
+  position: absolute;
+  display: flex;
+  align-items: flex-start ;
+  padding: 10px 0px;
+  background-color: transparent;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  width: 500px;
+  justify-content: flex-start;
+  text-align: left;
+  gap: 2rem;
+
+}
+.custom-button2 {
+  position: absolute;
+  display: flex;
+  align-items: flex-start ;
+  padding: 10px 0px;
+  background-color: transparent;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  width: 500px;
+  justify-content: flex-start;
+  text-align: left;
+  gap: 2rem;
+  z-index: 99;
+
+}
+
+
+
+.custom-button_3{
+  transform-origin: left center;
+  transform: rotate(-14deg); 
+
+}
+.custom-button_2{
+  transform-origin: left center;
+  transform: rotate(-7deg); 
+
+}
+.custom-button__2{
+  transform-origin: left center;
+  transform: rotate(7deg); 
+
+}
+.custom-button__3{
+  transform-origin: left center;
+  transform: rotate(14deg); 
+}
+.custom-button-right{
+  justify-content: flex-end;
+  text-align: right;
+margin: 2px 25px 40px;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  
+ 
+  font-size: 20px;
+}
+
+.title {
+  margin-bottom: 5px;
+  font-weight: 600;
+  
+}
+.custom-button2-container:hover .visible {
+  opacity: 1;
+}
+.custom-button2:hover .visible {
+  opacity: 1;
+}
+
+.custom-button2-container:hover .custom-button2:hover .visible {
+  opacity: 1;
+  transition: opacity 0.3s ease; /* Transición suave de la opacidad */
+}
+
+.visible {
+  opacity: 0;
+
+  transition: opacity 0.3s ease; /* Transición suave de la opacidad */
+}
+
+
+
+.custom-button img {
+  width: 14px; /* Ajusta el tamaño según tus necesidades */
+  height: 14px; /* Ajusta el tamaño según tus necesidades */
+  margin-top: 5px;
+
+}
+
+.custom-button2 img {
+  width: 10px; /* Ajusta el tamaño según tus necesidades */
+  height: 10px; /* Ajusta el tamaño según tus necesidades */
+  margin-top: 5px;
+  
+}
+.custom-button2:hover img {
+  width: 14px; /* Ajusta el tamaño según tus necesidades */
+  height: 15px; /* Ajusta el tamaño según tus necesidades */
+  margin-top: 5px;
+  
+}
+.custom-button0 img {
+  width: 24px; /* Ajusta el tamaño según tus necesidades */
+  height: 24px; /* Ajusta el tamaño según tus necesidades */
+  margin-top: 0px;
+}
+
+.secondary-text {
+  display: none;
+  font-size: 0.8em;
+  color: #ffffff00;
+  transition: all 0.3s ease;
+}
+.secondary-text-right {
+  display: none;
+  font-size: 0.8em;
+  color: #ffffff00;
+  transition: all 0.3s ease;
+}
+.secondary-text:hover {
+  color: #ffffff;
+
+}
+
+.custom-button:hover .secondary-text {
+  display: block;
+  color: #ffffff;
+}
+
+
+/* iconos */
+
+.icon-link {
+  display: inline-block;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.icon-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.rotate-on-hover {
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.rotate-on-hover:hover {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.icon-text {
+  margin-left: 1rem;  
+  width: auto; 
+  color: #ffffff;
+}
+.icon-text:hover{
+  margin-left: 1rem;  
+  width: auto; 
+  
+  
+} 
+/* Aplica estilos al hacer hover en el contenedor */
+.icon-link:hover .rotate-on-hover {
+  transform: rotate(180deg);
+}
+
+/* Restaura el estado original al hacer hover en el texto */
+.icon-link:hover .icon-text:hover .rotate-on-hover {
+  transform: rotate(0deg);
+}
+
+
+
+/* loader */
+
+.svg-loader {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40px) scale(0.8);;
+}
+.loader-svg{
+  position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+  fill: none;
+  stroke-width: 10px;
+  stroke-linecap: round;
+  stroke: rgba(132, 0, 255, 0.279);
+}
+.loader-svg.bg{
+  stroke-width: 14px; 
+  stroke: rgba(207, 205, 245, 0.059);
+}
+.animate{
+  stroke-dasharray: 242.6;
+  animation: fill-animation 1s cubic-bezier(1,1,1,1) 0s infinite;
+}
+
+@keyframes fill-animation{
+  0%{
+    stroke-dasharray: 40 242.6;
+    stroke-dashoffset: 0;
+  }
+  50%{
+    stroke-dasharray: 141.3;
+    stroke-dashoffset: 141.3;
+  }
+  100%{
+    stroke-dasharray: 40 242.6;
+    stroke-dashoffset: 282.6;
+  }
+} 
+#lottie-container svg {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+ /*  */
+ .tips-container {
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  z-index: 999;
+  width: 450px;
+  
+}
+.tips-container2 {
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  z-index: 999;
+  width: 450px;
+  
+}
+.tips-container3 {
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  z-index: 999;
+  width: 450px;
+  
+}
+.tips-container4 {
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  z-index: 999;
+  width: 450px;
+  
+}
+
+.tips-img {
+  width: 14px; /* Ajusta el tamaño de la imagen según tus necesidades */
+  height: auto;
+  animation: parpadeo 3s infinite; /* La animación dura 1 segundo y se repite infinitamente */
+
+}
+
+.tips-content {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute; 
+  top: -10px;
+  left: 0;
+  padding: 10px; 
+  cursor: pointer;
+}
+.tips-content2 {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute; 
+  top: -10px;
+  left: 0;
+  padding: 10px; 
+  cursor: pointer;
+}
+
+.tips-content3 {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute; 
+  top: -10px;
+  left: 0;
+  padding: 10px; 
+  cursor: pointer;
+}
+.tips-content4 {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute; 
+  top: -10px;
+  left: 0;
+  padding: 10px; 
+  cursor: pointer;
+}
+
+.tips-container:hover .tips-content {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease-in-out;
+}
+
+
+.tips-container2:hover .tips-content2 {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s ease-in-out;
+}
+.tips-container3:hover .tips-content3 {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.6s ease-in-out;
+}
+.tips-container4:hover .tips-content4 {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 2s ease-in-out;
+}
+
+.tips-title {
+  font-size: 20px; /* Tamaño del título */
+  margin-bottom: 10px;
+  text-shadow: 0px 10px 30px #f712ff50;
+}
+
+.tips-text {
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.5;
+  
+} 
+
+.tips-content.right {
+  left: calc(20px + 30px); /* Ajusta la separación a la derecha según tus necesidades */
+}
+.tips-content.left {
+  right: calc(20px + 30px); /* Ajusta la separación a la derecha según tus necesidades */
+
+}
+
+.point {
+  position: fixed;
+  width: 200px; /* 100% del ancho de la ventana */
+  height: 200px; /* 100% de la altura de la ventana */
+  background: radial-gradient(circle, rgba(125, 20, 132, 0.2) 0%, rgb(69, 20, 132, 0) 70%);
+  pointer-events: none;
+  transition: transform 0.2s ease-out;
+  margin: -100px;
+  padding: 0; 
+  animation: parpadeo 3s infinite; /* La animación dura 1 segundo y se repite infinitamente */
+}
+
+@keyframes parpadeo {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+     /* Estilo de los objetos */
+      
+ .medium, .large {
+      display: none; /* Inicialmente ocultos */
+    }
+
+    /* Estilo de la imagen central */
+    .image.center {
+      /* Estilo de la imagen central */
+    }
+
+   .masmenosbien{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 10px;
+   margin-top: 1.5rem ; 
+  }
+
+  .contenedor2 {
+  
+      display:flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 750px;
+      margin: auto;
+      margin-top:100px;
+      
+     
+    
+  
+  }
+
+  .contenedor_fijo {
+    position: absolute;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 750px;
+    z-index: 99;
+    margin-top: 130px; 
+  
+  
+  }
+
+
+

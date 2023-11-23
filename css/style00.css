@@ -1,0 +1,175 @@
+.MENU {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.MENU .overlap-group-wrapper {
+  width: 2079px;
+  height: 1021.5px;
+}
+
+.MENU .overlap-group {
+  position: relative;
+  width: 2048px;
+  height: 1022px;
+  background-image: url(./img/image-302.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.MENU .image {
+  position: absolute;
+  width: 2048px;
+  height: 80px;
+  top: 941px;
+  left: 0;
+  object-fit: cover;
+}
+
+.MENU .overlap {
+  position: absolute;
+  width: 1126px;
+  height: 724px;
+  top: 149px;
+  left: 636px;
+}
+
+.MENU .div {
+  position: absolute;
+  width: 1126px;
+  height: 724px;
+  top: 0;
+  left: 0;
+}
+
+.MENU .titulo-herramientas {
+  position: absolute;
+  width: 474px;
+  height: 474px;
+  top: 125px;
+  left: 133px;
+}
+
+.MENU .grande {
+  position: absolute;
+  width: 724px;
+  height: 724px;
+  top: 0;
+  left: 8px;
+}
+
+.MENU .element {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 350px;
+  left: 0;
+}
+
+.MENU .img {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 670px;
+  left: 538px;
+}
+
+.MENU .element-2 {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 351px;
+  left: 724px;
+}
+
+.MENU .element-3 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 83px;
+  left: 600px;
+}
+
+.MENU .text-wrapper {
+  position: absolute;
+  height: 30px;
+  top: 656px;
+  left: 624px;
+  text-shadow: 10px 10px 50px #f912ffcc;
+  background: linear-gradient(180deg, rgb(147.35, 32.58, 255) 0%, rgb(249.33, 18.77, 255) 100%);
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-family: "Inter", Helvetica;
+  font-weight: 700;
+  color: transparent;
+  font-size: 25px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.MENU .p {
+  position: absolute;
+  height: 30px;
+  top: 76px;
+  left: 696px;
+  text-shadow: 10px 10px 50px #f912ffcc;
+  background: linear-gradient(180deg, rgb(147.35, 32.58, 255) 0%, rgb(249.33, 18.77, 255) 100%);
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-family: "Inter", Helvetica;
+  font-weight: 700;
+  color: transparent;
+  font-size: 25px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.MENU .text-wrapper-2 {
+  position: absolute;
+  height: 30px;
+  top: 341px;
+  left: 801px;
+  text-shadow: 10px 10px 50px #f912ffcc;
+  background: linear-gradient(180deg, rgb(147.35, 32.58, 255) 0%, rgb(249.33, 18.77, 255) 100%);
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-family: "Inter", Helvetica;
+  font-weight: 700;
+  color: transparent;
+  font-size: 25px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.MENU .text-wrapper-3 {
+  position: absolute;
+  height: 30px;
+  top: 490px;
+  left: 232px;
+  text-shadow: 10px 10px 50px #f912ffcc;
+  background: linear-gradient(180deg, rgb(249.33, 18.77, 255) 0%, rgb(147.35, 32.58, 255) 100%);
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-family: "Inter", Helvetica;
+  font-weight: 700;
+  color: transparent;
+  font-size: 25px;
+  text-align: right;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}

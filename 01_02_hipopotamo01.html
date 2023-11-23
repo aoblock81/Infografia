@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/globals.css" />
+  <link href="css/foundation.css" rel="stylesheet" type="text/css" />
+  <link href="css/twentytwenty.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="css/animate.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800">
+
+  <title>Infografía Interactiva</title>
+</head>
+
+<body>
+
+  <img class="svg-background3" src="img/circle.svg" alt="Mi SVG feliz" class="circle">
+  <div class="contenedor_menu2">
+    <a href="index.html">
+      <h3 class="text-container2 bold anima">
+        Imágenes<br>
+        que Desafían<br>
+        la <span class="degrade"> Realidad</span>
+      </h3>
+    </a>
+    <!-- ... Opciones Nuecleo 01... -->
+    <div class="custom-button2-container">
+
+      <button class="custom-button2" style="margin-top:10px; margin-left: 180px;">
+        <div class="title-container">
+
+          <div class="title degrade muestra">Creando imágenes a partir de texto</div>
+        </div>
+      </button>
+
+      <button class="custom-button2" style="margin-top: 10px; margin-left: 554px  ;">
+        <img src="img/01.svg" alt="Icono SVG" />
+        <div class="title-container">
+
+          <a class="" href="01_02.html">
+            <div class="title degrade anima">¿Cómo mejorar mis prompt?</div>
+          </a>
+        </div>
+      </button>
+
+      <button class="custom-button2 custom-button__2" style="margin-top: 45px; margin-left: 552px;">
+        <img src="img/01.svg" alt="Icono SVG" />
+        <div class="title-container">
+          <a class="" href="01_03.html">
+            <div class="title degrade anima visible">El estilo es la clave</div>
+          </a>
+        </div>
+      </button>
+
+      <button class="custom-button2 custom-button_2" style="margin-top: -25px   ; margin-left: 552px   ;">
+        <img src="img/01.svg" alt="Icono SVG" />
+        <div class="title-container">
+          <a class="" href="01_01.html">
+            <div class="title degrade anima visible">Explora y Observa</div>
+          </a>
+        </div>
+      </button>
+
+    </div>
+    <!-- ... Opciones ... -->
+  </div>
+
+  <div class="parallax">
+    <div class="parallax-bg">
+      <div class="layer" id="layer1" data-depth="0.00">
+        <img src="img/bg00.png" alt="Imagen 1">
+      </div>
+      <div class="layer" id="layer2" data-depth="0.001">
+        <img src="img/bg01.png" alt="Imagen 1">
+      </div>
+      <div class="layer" id="layer3" data-depth="0.002">
+        <img src="img/bg02.png" alt="Imagen 3">
+      </div>
+      <div id="cursor"></div>
+    </div>
+    <div class="content-over-parallax">
+      <div class="overlay-content">
+
+
+        <div class="contenedor ">
+
+          <div class="svg-loader" style=" margin-top: -50px; ">
+            <svg class="svg-container " height="100" width="100" viewBox="0 0 100 100">
+              <circle class="loader-svg bg" cx="50" cy="50" r="45"></circle>
+              <circle class="loader-svg animate" cx="50" cy="50" r="45"></circle>
+            </svg>
+          </div>
+
+          <div class="contenedor2">
+            <div class="image-container-slide animate__animated animate__zoomIn animate__delay-2s">
+              <img src="img/generadas/mejora_1.png" alt="Imagen 1">
+            </div>
+
+
+
+            <div class="masmenosbien">
+              <div>❌ DEMASIADO BREVE</div>
+
+              <div>DETALLADO, MUCHO MEJOR ✅</div>
+            </div>
+
+
+
+            <div class="slider-container">
+              <input type="range" id="slider" class="slider" min="0" max="30" step="1" value="0"
+                oninput="changeImage(this.value)">
+            </div>
+            <p><span class="bold degrade animate__animated animate__fadeInDown animate__delay-1s">Para encontrar la
+                imagen
+                perfecta, solo tienes que encontrar las palabras adecuadas</span></p>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="contenedor_fijo">
+    <div class="small" style="margin-top: 110px; ">
+      <div class="inputPrompt">
+        <p class="typing">un hipopótamo en la montaña.<span class="typing-text"></span></p>
+      </div>
+    </div>
+    <div class="medium" style="margin-top: 110px; ">
+      <div class="inputPrompt ">
+        <p class="typing">un hipopótamo rosa, haciendo trekking en la montaña. Estilo 3D<span
+            class="typing-text"></span></p>
+
+      </div>
+    </div>
+    <div class="large">
+      <div class="inputPromptBox">
+        <p class=" typingbox">Un lindo hipopótamo rosado caminando por las montañas, visualizado como una
+          animación
+          3D de Pixar Studios. La escena da vida al adorable hipopótamo que atraviesa un impresionante paisaje
+          montañoso, con vistas impresionantes y encantadores encuentros con la vida silvestre. La temperatura
+          del
+          color es vibrante y atractiva. El hipopótamo tiene una expresión facial feliz y amigable. La
+          iluminación es
+          dinámica y cautivadora, estableciendo una atmósfera inmersiva. Sin ropa.<span class="typing-text"></span>
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ... tips... -->
+
+  <div class="tips-container animate__animated animate__zoomInLeft animate__delay-3s   "
+    style="top: 550px; left: 100px;">
+    <div class="point"></div>
+    <img src="img/01.svg" alt="Tip" class="tips-img">
+    <div class="tips-content right">
+
+      <h2 class="tips-title degrade bold">La IA, es capaz
+        de ofrecer </br>muy buenos resultados con descripciones cortas</h2>
+      <p class="tips-text">Su fortaleza radica en su capacidad </br>para llenar los vacíos y proporcionar detalles,
+        basados en los datos de entrenamiento.</p>
+    </div>
+
+    <!-- ..... -->
+    <div class="tips-container2 animate__animated animate__zoomInLeft animate__delay-3s   " style="    top: 0px;
+      left: 1500px;  ">
+      <div class="point"></div>
+      <img src="img/01.svg" alt="Tip" class="tips-img">
+      <div class="tips-content2 right">
+
+        <h2 class="tips-title degrade bold">Exploremos la diferencia</h2>
+        <p class="tips-text">ten en cuenta que, si no supervisas adecuadamente el proceso, la IA puede introducir <a
+            class="fuxia bold  " href="03_01.html">sesgos</a>
+          no deseados. Asegúrate de revisar y corregir los resultados para mantener la imparcialidad y la precisión.</p>
+      </div>
+      <!-- ..... -->
+      <div class="tips-container3 animate__animated animate__zoomInLeft animate__delay-1s large  " style="    top: -400px;  
+      left: 150px;">
+        <div class="point"></div>
+        <img src="img/01.svg" alt="Tip" class="tips-img">
+        <div class="tips-content3 right">
+
+          <h2 class="tips-title degrade bold">Sé Específico</h2>
+          <p class="tips-text">Cuanto más detalles incluyas en tus prompts, mejor será la imagen generada. Describe
+            colores, formas, tamaños y otros atributos con precisión para obtener resultados que se ajusten a tus
+            expectativas.</p>
+        </div>
+        <!-- ..... -->
+        <div class="tips-container4 animate__animated animate__zoomInLeft animate__delay-1s medium " style="    top:201px;
+  left: 200px;">
+          <div class="point"></div>
+          <img src="img/01.svg" alt="Tip" class="tips-img">
+          <div class="tips-content4 right">
+
+            <h2 class="tips-title degrade bold">Contexto y Emoción</h2>
+            <p class="tips-text">Agrega contexto emocional o narrativo a tus prompts. Explica la atmósfera que deseas
+              crear o el estado de ánimo que buscas en la imagen. La IA puede interpretar emociones y conceptos.</p>
+
+          </div>
+          <!-- ..... -->
+
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+          <script src="js/script.js"></script>
+
+          <script src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+          <script src="js/jquery.event.move.js"></script>
+          <script src="js/jquery.twentytwenty.js"></script>
+          <script>
+            $(function () {
+              $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({ default_offset_pct: 0.7 });
+              $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({ default_offset_pct: 0.3, orientation: 'vertical' });
+            });
+          </script>
+
+</body>
+
+</html>

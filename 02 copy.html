@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/globals.css" />
+
+    <link href="css/foundation.css" rel="stylesheet" type="text/css" />
+    <link href="css/twentytwenty.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/animate.css" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+   
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800">
+
+
+ 
+    <title>Infografía Interactiva</title>
+</head>
+<body>
+
+<div class="thumbnail-container" id="thumbnailContainer">
+    <img src="img/generadas/min00.png" alt="Imagen 1" class="thumbnail" draggable="true" ondragstart="dragStart(event)" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
+    <img src="img/generadas/min01.png" alt="Imagen 2" class="thumbnail" draggable="true" ondragstart="dragStart(event)" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
+    <img src="img/generadas/min02.png" alt="Imagen 3" class="thumbnail" draggable="true" ondragstart="dragStart(event)" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
+    <img src="img/generadas/min03.png" alt="Imagen 4" class="thumbnail" draggable="true" ondragstart="dragStart(event)" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
+    <img src="img/generadas/min04.png" alt="Imagen 5" class="thumbnail" draggable="true" ondragstart="dragStart(event)" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
+    <img src="img/generadas/min05.png" alt="Imagen 6" class="thumbnail" draggable="true" ondragstart="dragStart(event)" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
+    <img src="img/generadas/min06.png" alt="Imagen 7" class="thumbnail" draggable="true" ondragstart="dragStart(event)" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
+    <img src="img/generadas/min07.png" alt="Imagen 8" class="thumbnail" draggable="true" ondragstart="dragStart(event)" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
+</div>
+
+<div class="image-container" id="imageContainer" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <img src="img/generadas/mindefault.jpg" alt="Imagen Principal" id="mainImage">
+</div>
+
+<div class="secondary-image" id="secondaryImageContainer">
+    <img src="img/generadas/toimagedefault.jpg" alt="Imagen Secundaria" id="secondaryImage">
+</div>
+
+<script>
+    const thumbnailContainer = document.getElementById('thumbnailContainer');
+    const imageContainer = document.getElementById('imageContainer');
+    const mainImage = document.getElementById('mainImage');
+    const secondaryImage = document.getElementById('secondaryImage');
+
+    let draggedThumbnail = null;
+
+    // Mapeo entre miniaturas y nombres de imágenes secundarias
+    const thumbnailToSecondaryImage = {
+        'min00.png': 'toimage00.jpg',
+        'min01.png': 'toimage01.jpg',
+        'min02.png': 'toimage02.jpg',
+        'min03.png': 'toimage03.jpg',
+        'min04.png': 'toimage04.jpg',
+        'min05.png': 'toimage05.jpg',
+        'min06.png': 'toimage06.jpg',
+        'min07.png': 'toimage07.jpg',
+    };
+
+    function allowDrop(event) {
+        event.preventDefault();
+    }
+
+    function drop(event) {
+        event.preventDefault();
+
+        if (draggedThumbnail) {
+            const thumbnailSrc = draggedThumbnail.src;
+            const thumbnailName = thumbnailSrc.split('/').pop(); // Obtén el nombre de la miniatura
+            const secondaryImageName = thumbnailToSecondaryImage[thumbnailName];
+
+            if (secondaryImageName) {
+                // Construye la ruta completa de las imágenes
+                const mainImageSrc = 'img/generadas/' + thumbnailName;
+                const secondaryImageSrc = 'img/generadas/' + secondaryImageName;
+
+                // Cambia la fuente de ambas imágenes
+                mainImage.src = mainImageSrc;
+                secondaryImage.src = secondaryImageSrc;
+            }
+
+            draggedThumbnail = null;
+            imageContainer.classList.remove('drag-over');
+        }
+    }
+
+    function dragStart(event) {
+        draggedThumbnail = event.target;
+    }
+
+    function dragEnter(event) {
+        imageContainer.classList.add('drag-over');
+    }
+
+    function dragLeave(event) {
+        imageContainer.classList.remove('drag-over');
+    }
+</script>
+
+</body>
+</html>
