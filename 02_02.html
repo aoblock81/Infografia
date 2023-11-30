@@ -10,21 +10,71 @@
   <link rel="stylesheet" href="css/animate.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800">
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
   <title>Infografía Interactiva</title>
 </head>
 
 <body>
+   <!-- ... Menu ... -->
 
-  <img class="svg-background4" src="img/circle.svg" alt="Mi SVG feliz" class="circle">
-  <div class="contenedor_menu2">
-   <a href="index.html"><h3 class="text-container2 bold anima">
-      Imágenes<br>
-      que Desafían<br>
-      la <span class="degrade"> Realidad</span>
-    </h3>
-  </a>
-    <!-- ... Opciones Nuecleo 01... -->
+   <img class="svg-background4" src="img/circle.svg" alt="Mi SVG feliz" class="circle">
+  
+  <!-- ... bg parallax ... -->
+
+  <div class="parallax">
+    <div class="parallax-bg">
+      <div class="layer" id="layer1" data-depth="0.00">
+        <img src="img/bg00.png" alt="Imagen 1">
+      </div>
+      <div class="layer" id="layer2" data-depth="0.001">
+        <img src="img/bg01.png" alt="Imagen 1">
+      </div>
+      <div class="layer" id="layer3" data-depth="0.002">
+        <img src="img/bg02.png" alt="Imagen 3">
+      </div>
+      <div id="cursor"></div>   <!-- ... cursor ... -->
+    </div>
+    <div class="contenedor_menu2">
+      <div class="text-container2">
+        <a href="index.html " target="_top">
+    
+          <h3 class="bold anima">
+            Imágenes<br>
+            que Desafían<br>
+            la <span class="degrade"> Realidad</span>
+          </h3>
+    
+        </a>
+    
+        <div class="custom-button1-container">
+    
+          <button class="custom-button1 custom-button__2 " style="margin-top:50px; margin-left: 180px;">
+            <div class="title-container">
+              <a class="" href="03_01.html" target="_top">
+                <div class="title degrade muestra anima visible0">Develando imágenes</div>
+              </a>
+            </div>
+          </button>
+    
+          <button class="custom-button1 custom-button__3" style="margin-top:90px; margin-left: 175px; ">
+            <div class="title-container">
+              <a class="" href="04_01.html" target="_top">
+                <div class="title degrade muestra anima visible0">Explora la IA desde tu Hogar</div>
+              </a>
+            </div>
+          </button>
+    
+          <button class="custom-button1 custom-button__4" style="margin-top:130px; margin-left: 160px; ">
+            <div class="title-container">
+              <a class="" href="01_01.html" target="_top">
+                <div class="title degrade muestra anima visible0">Creando imágenes a partir de texto</div>
+              </a>
+            </div>
+          </button>
+    
+        </div>
+      </div>
+      <!-- ... Opciones Nuecleo 01... -->
     <div class="custom-button2-container">
 
       <button class="custom-button2" style="margin-top:10px; margin-left: 180px;">
@@ -65,31 +115,13 @@
     <!-- ... Opciones ... -->
   </div>
 
-  <div class="parallax">
-    <div class="parallax-bg">
-      <div class="layer" id="layer1" data-depth="0.00">
-        <img src="img/bg00.png" alt="Imagen 1">
-      </div>
-      <div class="layer" id="layer2" data-depth="0.001">
-        <img src="img/bg01.png" alt="Imagen 1">
-      </div>
-      <div class="layer" id="layer3" data-depth="0.002">
-        <img src="img/bg02.png" alt="Imagen 3">
-      </div>
-      <div id="cursor"></div>
-    </div>
-    <div class="content-over-parallax">
-            <div class="overlay-content">
+  <div class="content-over-parallax">
+    <div class="overlay-content">
 
 
-                <div class="contenedor ">
+        <div class="contenedor ">
                     <h1 class="animate__animated animate__fadeInDown" >Creación de Imagen a Imagen</h1>
                     <h2 class="animate__animated animate__fadeInDown animate__delay-1s">Esta herramienta te permite permitir cargar imágenes de referencia que actúan como guías visuales, ayudándote a comunicar una visión de manera más precisa.</h2>
-
-
-
-     
-                  
 
                   <div class="secondary-image" id="secondaryImageContainer">
                       <img src="img/generadas/toimagedefault.jpg" alt="Imagen Secundaria" id="secondaryImage">
@@ -110,7 +142,6 @@
                     <img src="img/generadas/min06.png" alt="Imagen 7" class="thumbnail" draggable="true" ondragstart="dragStart(event)" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
                     <img src="img/generadas/min07.png" alt="Imagen 8" class="thumbnail" draggable="true" ondragstart="dragStart(event)" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
                 </div>
-
 
 
             </div>

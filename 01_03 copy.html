@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouse Aware Slider</title>
+  <style>
+    body.estilos {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .gallery-container-estilos {
+      width: 100%;
+      height: 300px;
+      margin: 20px 0;
+    }
+
+    .gallery-estilos {
+      display: flex;
+      transition: transform 0.5s ease;
+      height: 100%;
+      gap: 10px;
+    }
+
+    .image-container-estilos {
+      flex: 0 0 auto;
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+
+    img.estilos {
+      width: auto;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .img-container-estilos {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      /* Añadido para la transición */
+    }
+
+    .img-container-estilos:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="contenedor-estilos ">
+    <h1 class="animate__animated animate__fadeInDown" style="margin-left: -20px;">"Una ilustración" o "una imagen"
+    </h1>
+    <h2 class="animate__animated animate__fadeInDown animate__delay-1s">es un concepto ambiguo.</h2>
+    <p>
+      <span class="palabra1-estilos" id="palabra1-estilos">¿Qué tipo de ilustración?</span>
+      <span class="palabra2-estilos" id="palabra2-estilos">Realista </span><span class="palabra3-estilos"
+        id="palabra3-estilos">a mano alzada,
+      </span><span class="palabra4-estilos" id="palabra4-estilos">en acuarela? </span>
+      <span class="palabra5-estilos" id="palabra5-estilos">¿Con iluminación cinemática</span>
+      <span class="palabra6-estilos" id="palabra6-estilos">o mejor que parezca un cuadro al óleo?</span>
+    </p>
+  </div>
+
+  <div class="gallery-container-estilos" onmousemove="scrollGallery(event)" onmouseleave="stopScrolling()">
+    <div class="gallery-estilos" id="galleryContainer-estilos">
+      <div class="image-container-estilos" onmouseover="expandImage(this, 'palabra1-estilos')"
+        onmouseout="resetImage(this, 'palabra1-estilos')">
+        <div class="img-container-estilos">
+          <img class="image-estilos center-estilos" src="img/estilos/ilustracion.jpg" alt="Imagen 1">
+        </div>
+      </div>
+      <div class="image-container-estilos" onmouseover="expandImage(this, 'palabra2-estilos')"
+        onmouseout="resetImage(this, 'palabra2-estilos')">
+        <div class="img-container-estilos">
+          <img class="image-estilos" src="img/estilos/realista.jpg" alt="Imagen 2">
+        </div>
+      </div>
+      <div class="image-container-estilos" onmouseover="expandImage(this, 'palabra3-estilos')"
+        onmouseout="resetImage(this, 'palabra3-estilos')">
+        <div class="img-container-estilos">
+          <img class="image-estilos" src="img/estilos/mano.jpg" alt="Imagen 3">
+        </div>
+      </div>
+      <div class="image-container-estilos" onmouseover="expandImage(this, 'palabra4-estilos')"
+        onmouseout="resetImage(this, 'palabra4-estilos')">
+        <div class="img-container-estilos">
+          <img class="image-estilos" src="img/estilos/acuarela.jpg" alt="Imagen 4">
+        </div>
+      </div>
+      <div class="image-container-estilos" onmouseover="expandImage(this, 'palabra5-estilos')"
+        onmouseout="resetImage(this, 'palabra5-estilos')">
+        <div class="img-container-estilos">
+          <img class="image-estilos" src="img/estilos/cine.jpg" alt="Imagen 5">
+        </div>
+      </div>
+      <div class="image-container-estilos" onmouseover="expandImage(this, 'palabra6-estilos')"
+        onmouseout="resetImage(this, 'palabra6-estilos')">
+        <div class="img-container-estilos">
+          <img class="image-estilos" src="img/estilos/oleo.jpg" alt="Imagen 6">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const slider = document.getElementById('galleryContainer-estilos');
+
+    function expandImage(element, palabraId) {
+      const selectedContainer = element;
+      selectedContainer.querySelector('.img-container-estilos').style.transform = 'scale(1.1)';
+
+      // Aquí puedes agregar lógica adicional si es necesario, como cambiar el contenido relacionado con la palabra.
+      // Por ejemplo:
+      const palabraElement = document.getElementById(palabraId);
+      palabraElement.style.color = 'red';
+    }
+
+    function resetImage(element, palabraId) {
+      const selectedContainer = element;
+      selectedContainer.querySelector('.img-container-estilos').style.transform = 'scale(1)';
+
+      // Aquí puedes agregar lógica adicional si es necesario, como cambiar el contenido relacionado con la palabra.
+      // Por ejemplo:
+      const palabraElement = document.getElementById(palabraId);
+      palabraElement.style.color = ''; // Vuelve al color original
+    }
+
+    // Configuración del desplazamiento del ratón
+    function scrollGallery(e) {
+      const percent = e.clientX / window.innerWidth;
+      const scrollValue = -(slider.scrollWidth - window.innerWidth) * percent;
+      slider.style.transform = `translateX(${scrollValue}px)`;
+    }
+
+    function stopScrolling() {
+      slider.style.transform = 'translateX(0)';
+    }
+  </script>
+</body>
+
+</html>
